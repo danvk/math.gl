@@ -157,4 +157,13 @@ export default class WebMercatorViewport {
    * @returns {WebMercatorViewport}
    */
   fitBounds(bounds, options?: {padding?: number; offset?: [number, number]}): WebMercatorViewport;
+
+  /**
+   * Returns the bounding box of the viewport.
+   * @param {Object} [options]
+   * @param {Number} [options.z] - The altitude at which the bounds should be calculated.
+   * @param {Boolean} [options.quad] - If `true`, returns the four corners of the bounds instead of an aligned rectangle.
+   * @returns {Array} bounds - [[lon, lat], [lon, lat]], or 4 points if `options.quad: true`
+   */
+  getBounds(options?: {z?: number; quad?: boolean}) : Array<number[]>;
 }
